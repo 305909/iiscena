@@ -1,0 +1,39 @@
+name: OpenOffice Automatic Evaluation
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Run every day at noon
+  workflow_dispatch:  # Allows manual activation of the workflow
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download files from Google Drive
+        run: python src/download.py
+
+      - name: Start OpenOffice in headless mode
+        run: soffice --headless --accept="socket,host=localhost,port=2002;urp;" &
+
+      - name: Run the evaluation script
+        run: python src/evaluation.py
+
+      - name: Commit results
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add output/report.txt
+          git commit -m "Add Evaluation Report"
+          git push
