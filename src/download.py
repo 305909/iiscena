@@ -13,6 +13,7 @@ SCOPES = ['https://www.googleapis.com/auth/drive']
 creds_json = os.getenv("DRIVE")
 
 if creds_json:
+    print(f"DEBUG: DRIVE Secret: {creds_json is not None}")
     creds_dict = json.loads(creds_json)
     creds = service_account.Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
 else:
