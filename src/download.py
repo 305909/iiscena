@@ -31,7 +31,7 @@ def drive():
         return
     
     # Create folder for student files
-    os.makedirs("homework/students", exist_ok=True)
+    os.makedirs("assignments/students", exist_ok=True)
     
     for file in files:
         file_id = file['id']
