@@ -10,14 +10,14 @@ FOLDER_ID = "1miPu8Nr2etjOZrdKe99cepMRZkCHo4ZZYDLKZvZdTs-1_JIozTBTAPvRJlj13PD8MU
 SCOPES = ['https://www.googleapis.com/auth/drive']
 
 # Read credentials from GitHub Secret
-creds_json = os.getenv("DRIVE")
+creds_json = os.getenv("CREDENTIALS")
 
 if creds_json:
-    print(f"DEBUG: DRIVE Secret: {creds_json is not None}")
+    print(f"DEBUG: CREDENTIALS Secret: {creds_json is not None}")
     creds_dict = json.loads(creds_json)
     creds = service_account.Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
 else:
-    raise Exception("Google Credentials Not Available! Set up Secret 'DRIVE'.")
+    raise Exception("Google Credentials Not Available! Set up Secret 'CREDENTIALS'.")
   
 def drive():
     """Download files from Google Drive folder and save to repository."""
