@@ -37,19 +37,24 @@ def read_sheet_data(document):
 
 def evaluate_submission(student_file, data_solutions):
     """Compares a student's file with the solution file and assigns a score."""
+    # Split the filename by the hyphen to extract first name and last name
+    student_name, student_surname = os.path.splitext(student_file)[0].split('-')
+    
+    # Open the student file and solution file
     student_doc = open_calc_file(student_file)
     data_student = read_sheet_data(student_doc)
 
     score = 0
     total_cells = data_solutions.size
 
+    # Compare each cell's value with the solution
     for (i, j), solution_value in data_solutions.stack().items():
         student_value = data_student.at[i, j] if (i, j) in data_student.index else None
         if student_value == solution_value:
             score += 1  # Points for each correct cell
 
     percentage = (score / total_cells) * 100
-    return round(percentage, 2)
+    return student_name, student_surname, round(percentage, 2)
 
 def main():
     """Iterates through student files, evaluates them, and generates a report."""
@@ -65,13 +70,16 @@ def main():
     for file in os.listdir(ASSIGNMENTS_FOLDER):
         if file.endswith(".ods"):
             file_path = os.path.join(ASSIGNMENTS_FOLDER, file)
-            score = evaluate_submission(file_path, data_solutions)
-            results.append({"Student": file, "Score (%)": score})
+            student_name, student_surname, score = evaluate_submission(file_path, data_solutions)
+            
+            results.append({"Name": student_name, "Surname": student_surname, "Score (%)": score})
             print(f"Evaluating {file}: {score}%")
 
+    # Write results to CSV
     data_report = pd.DataFrame(results)
     data_report.to_csv(REPORT_FILE, index=False)
-    print(f"Report: {REPORT_FILE}")
+    
+    print(f"Report saved to {REPORT_FILE}")
 
 if __name__ == "__main__":
     main()
