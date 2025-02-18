@@ -4,8 +4,8 @@ import pandas as pd
 
 # Configuration: Paths for solution file and student submissions
 SOLUTIONS_FILE = "solutions/solution.ods"  # File with the correct answers
-ASSIGNMENTS_FOLDER = "homework/"  # Folder with student submissions
-REPORT_FILE = "report.csv"  # Output file with student scores
+ASSIGNMENTS_FOLDER = "assignments/"  # Folder with student submissions
+REPORT_FILE = "output/report.csv"  # Output file with student scores
 
 # Connect to LibreOffice/OpenOffice
 local_context = uno.getComponentContext()
