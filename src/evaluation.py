@@ -79,7 +79,7 @@ def main():
     data_report = pd.DataFrame(results)
     data_report.to_csv(REPORT_FILE, index=False)
     
-    print(f"Report saved to {REPORT_FILE}")
+    print(f"Report: {REPORT_FILE}")
 
 if __name__ == "__main__":
     main()
