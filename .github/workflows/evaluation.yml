@@ -22,6 +22,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install LibreOffice & PyUNO
+        run: |
+          sudo apt update
+          sudo apt install -y libreoffice libreoffice-script-provider-python python3-uno
+
       - name: Start OpenOffice in headless mode
         run: soffice --headless --accept="socket,host=localhost,port=2002;urp;" &
 
