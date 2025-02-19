@@ -15,11 +15,12 @@ jobs:
         run: |
           docker run --rm -v ${{ github.workspace }}:/workspace \
           --workdir /workspace \
-          libreoffice/loolwsd:latest bash -c "
-          apt update && apt install -y libreoffice python3-pip python3-uno &&
+          libreoffice/base:latest bash -c "
+          apt update && apt install -y python3-pip python3-uno &&
           pip3 install pandas &&
           libreoffice --headless --accept='socket,host=localhost,port=2002;urp;' &
-          sleep 5 && python3 src/evaluation.py"
+          sleep 5 &&
+          python3 src/evaluation.py"
 
       - name: Commit results
         run: |
