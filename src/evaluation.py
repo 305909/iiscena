@@ -17,7 +17,7 @@ desktop = ctx.ServiceManager.createInstanceWithContext("com.sun.star.frame.Deskt
 
 def open_calc_file(path):
     """Opens an ODS file in LibreOffice."""
-    url = uno.systemPathToFileUrl(os.path.abspath(path))
+    url = uno.systemPathToFileUrl(path)
     return desktop.loadComponentFromURL(url, "_blank", 0, ())
 
 def read_sheet_data(document):
