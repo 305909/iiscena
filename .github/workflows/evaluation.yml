@@ -22,6 +22,11 @@ jobs:
       - name: Esegui lo script di valutazione
         run: python src/evaluation.py
 
+      - name: Verifica la presenza di report.csv
+        run: |
+          ls -la  # Mostra tutti i file nella directory corrente
+          if [ -f "report.csv" ]; then echo "report.csv found"; else echo "report.csv not found"; fi
+
       - name: Commit dei risultati
         run: |
           git config --global user.name "GitHub Actions"
