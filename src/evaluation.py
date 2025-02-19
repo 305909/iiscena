@@ -1,39 +1,14 @@
 import os
-import uno
 import pandas as pd
 
 # Configuration: Paths for solution file and student submissions
-SOLUTIONS_FILE = "solutions/solution.ods"  # File with the correct answers
+SOLUTIONS_FILE = "solutions/solution.csv"  # File with the correct answers
 ASSIGNMENTS_FOLDER = "assignments/"  # Folder with student submissions
 REPORT_FILE = "report.csv"  # Report with student scores
 
-# Connect to LibreOffice/OpenOffice
-local_context = uno.getComponentContext()
-resolver = local_context.ServiceManager.createInstanceWithContext(
-    "com.sun.star.bridge.UnoUrlResolver", local_context
-)
-ctx = resolver.resolve("uno:socket,host=localhost,port=2002;urp;StarOffice.ComponentContext")
-desktop = ctx.ServiceManager.createInstanceWithContext("com.sun.star.frame.Desktop", ctx)
-
-def open_calc_file(path):
-    """Opens an ODS file in LibreOffice."""
-    url = uno.systemPathToFileUrl(path)
-    return desktop.loadComponentFromURL(url, "_blank", 0, ())
-
-def read_sheet_data(document):
-    """Extracts data from an OpenOffice Calc sheet and returns a DataFrame."""
-    sheet = document.Sheets.getByIndex(0)  # Use the first sheet
-    data = []
-    
-    for row in range(1, 50):  # Assume max 50 rows
-        row_data = []
-        for col in range(1, 20):  # Assume max 20 columns
-            cell = sheet.getCellByPosition(col, row)
-            value = cell.getFormula() if cell.Formula else cell.getValue()
-            row_data.append(value)
-        data.append(row_data)
-    
-    return pd.DataFrame(data)
+def read_csv_data(file_path):
+    """Opens a CSV file in Pandas."""
+    return pd.read_csv(file_path, header=None, dtype=str).fillna("")
 
 def evaluate_submission(student_file, data_solutions):
     """Compares a student's file with the solution file and assigns a score."""
@@ -41,17 +16,17 @@ def evaluate_submission(student_file, data_solutions):
     student_name, student_surname = os.path.splitext(student_file)[0].split('-')
     
     # Open the student file and solution file
-    student_doc = open_calc_file(student_file)
-    data_student = read_sheet_data(student_doc)
+    student_path = os.path.join(ASSIGNMENTS_FOLDER, student_file)
+    data_student = read_csv_data(student_path)
 
     score = 0
     total_cells = data_solutions.size
 
     # Compare each cell's value with the solution
-    for (i, j), solution_value in data_solutions.stack().items():
-        student_value = data_student.at[i, j] if (i, j) in data_student.index else None
-        if student_value == solution_value:
-            score += 1  # Points for each correct cell
+    for i in range(min(len(data_solutions), len(data_student))):
+        for j in range(min(len(data_solutions.columns), len(data_student.columns))):
+            if data_solutions.iat[i, j] == data_student.iat[i, j]:  # Text comparison
+                score += 1
 
     percentage = (score / total_cells) * 100
     return student_name, student_surname, round(percentage, 2)
@@ -62,16 +37,16 @@ def main():
         print(f"Error: folder '{ASSIGNMENTS_FOLDER}' not available.")
         return
 
-    solution_doc = open_calc_file(SOLUTIONS_FILE)
-    data_solutions = read_sheet_data(solution_doc)
-  
+    if not os.path.exists(SOLUTIONS_FILE):
+        print(f"Error: file '{SOLUTIONS_FILE}' not available.")
+        return
+        
+    data_solutions = read_csv_data(SOLUTIONS_FILE)
     results = []
   
     for file in os.listdir(ASSIGNMENTS_FOLDER):
-        if file.endswith(".ods"):
-            file_path = os.path.join(ASSIGNMENTS_FOLDER, file)
-            student_name, student_surname, score = evaluate_submission(file_path, data_solutions)
-            
+        if file.endswith(".csv"):
+            student_name, student_surname, score = evaluate_submission(file, data_solutions)
             results.append({"Name": student_name, "Surname": student_surname, "Score (%)": score})
             print(f"Evaluating {file}: {score}%")
 
