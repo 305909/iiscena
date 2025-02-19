@@ -11,16 +11,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run evaluation inside a LibreOffice container
+      - name: Install LibreOffice
         run: |
-          docker run --rm -v ${{ github.workspace }}:/workspace \
-          --workdir /workspace \
-          libreoffice/base:latest bash -c "
-          apt update && apt install -y python3-pip python3-uno &&
-          pip3 install pandas &&
-          libreoffice --headless --accept='socket,host=localhost,port=2002;urp;' &
-          sleep 5 &&
-          python3 src/evaluation.py"
+          sudo apt update
+          sudo apt install -y libreoffice python3-pip python3-uno
+
+      - name: Install Python dependencies
+        run: pip3 install pandas
+
+      - name: Run LibreOffice in headless mode and evaluation
+        run: |
+          libreoffice --headless --accept="socket,host=localhost,port=2002;urp;" &
+          sleep 5  # Wait for LibreOffice
+          python3 src/evaluation.py
 
       - name: Commit results
         run: |
