@@ -1,7 +1,12 @@
-name: OpenOffice Calc
+name: OpenOffice Calc Evaluation
 
 on:
   workflow_dispatch:
+    inputs:
+      lesson_name:
+        description: 'Lesson Name (Optional)'
+        required: false
+        default: ''
 
 jobs:
   evaluate:
@@ -20,12 +25,12 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Evaluation Script
-        run: python src/evaluation.py
+        run: python src/evaluation.py "${{ github.event.inputs.lesson_name }}"
 
-      - name: Push and Commit
+      - name: Push and Commit Report
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add report.csv
-          git commit -m "Add Evaluation Report"
+          git add report_*.csv
+          git commit -m "Add Evaluation Report for ${{ github.event.inputs.lesson_name }}"
           git push
