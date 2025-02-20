@@ -2,28 +2,33 @@ import os
 import sys
 import pandas as pd
 
-def get_latest_lesson(folder_path):
-    """Find the last folder in the directory."""
-    subdirs = [os.path.join(folder_path, d) for d in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, d))]
+def get(folder_path):
+    """Find the last available folder in the directory."""
+    subdirs = [
+        os.path.join(folder_path, d) for d in os.listdir(folder_path) 
+        if os.path.isdir(os.path.join(folder_path, d))
+    ]
     if not subdirs:
         return None
     return max(subdirs, key=os.path.getmtime)
 
-def read_csv_data(file_path):
+def read(file_path):
     """Open a CSV file in Pandas."""
     return pd.read_csv(file_path, header=None, dtype=str).fillna("")
 
-def evaluate_submission(student_file, data_solutions, data_assignment):
-    """Compare a student file to the solution and assign a score."""
-    student_name, student_surname = os.path.splitext(os.path.basename(student_file))[0].split('-')
-    data_student = read_csv_data(student_file)
+def evaluate(student_file, data_solutions, data_assignment):
+    """Evaluate the student file and assign a score."""
+    student_name, student_surname = [
+        part.lower().capitalize() for part in 
+        os.path.splitext(os.path.basename(student_file))[0].split('-')
+    ]
+    data_student = read(student_file)
     
     score = 0
     total_cells = 0
     
     for i in range(min(len(data_solutions), len(data_student))):
         for j in range(min(len(data_solutions.columns), len(data_student.columns))):
-            
             if data_solutions.iat[i, j] != data_assignment.iat[i, j]:  # Check the difference cells
                 total_cells += 1
                 
@@ -41,7 +46,7 @@ def main():
     solutions_path = "solutions"
     
     if not lesson_name:
-        lesson_name = os.path.basename(get_latest_lesson(assignments_path))
+        lesson_name = os.path.basename(get(assignments_path))
     
     if not lesson_name:
         print("Error: No lessons in the folder.")
@@ -50,7 +55,7 @@ def main():
     assignment_folder = os.path.join(assignments_path, lesson_name)
     solution_file = os.path.join(solutions_path, lesson_name, "solution.csv")
     assignment_file = os.path.join(solutions_path, lesson_name, "assignment.csv")
-    report_file = f"report_{lesson_name}.csv"
+    report_file = f"{lesson_name}-Report.csv"
     
     if not os.path.exists(assignment_folder):
         print(f"Error: Folder '{assignment_folder}' not available.")
@@ -64,15 +69,15 @@ def main():
         print(f"Error: File '{assignment_file}' not available.")
         return
     
-    data_solutions = read_csv_data(solution_file)
-    data_assignment = read_csv_data(assignment_file)
+    data_solutions = read(solution_file)
+    data_assignment = read(assignment_file)
     
     results = []
     
     for file in os.listdir(assignment_folder):
         if file.endswith(".csv"):
             student_file = os.path.join(assignment_folder, file)
-            student_name, student_surname, score = evaluate_submission(student_file, data_solutions, data_assignment)
+            student_name, student_surname, score = evaluate(student_file, data_solutions, data_assignment)
             
             results.append({"Name": student_name, "Surname": student_surname, "Score (%)": score})
             print(f"Assessment {file}: {score}%")
