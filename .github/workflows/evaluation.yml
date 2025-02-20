@@ -1,4 +1,4 @@
-name: Valutazione Automatica OpenOffice
+name: OpenOffice Calc
 
 on:
   workflow_dispatch:
@@ -8,29 +8,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Imposta Python
+      - name: Set Up Python 3.9
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Installa dipendenze
+      - name: Install Requirements
         run: pip install -r requirements.txt
 
-      - name: Esegui lo script di valutazione
+      - name: Run Evaluation Script
         run: python src/evaluation.py
 
-      - name: Verifica la presenza di report.csv
-        run: |
-          ls -la  # Mostra tutti i file nella directory corrente
-          if [ -f "report.csv" ]; then echo "report.csv found"; else echo "report.csv not found"; fi
-
-      - name: Commit dei risultati
+      - name: Push and Commit
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add report.csv
-          git commit -m "Aggiunti report valutazione"
+          git commit -m "Add Evaluation Report"
           git push
