@@ -29,6 +29,7 @@ def evaluate(student_file, data_solutions, data_assignment):
     
     for i in range(min(len(data_solutions), len(data_student))):
         for j in range(min(len(data_solutions.columns), len(data_student.columns))):
+            
             if data_solutions.iat[i, j] != data_assignment.iat[i, j]:  # Check the difference cells
                 total_cells += 1
                 
@@ -39,23 +40,27 @@ def evaluate(student_file, data_solutions, data_assignment):
     return student_name, student_surname, round(percentage, 2)
 
 def main():
-    """Evaluate student files for an input lesson."""
-    lesson_name = sys.argv[1] if len(sys.argv) > 1 else None
+    """Evaluate student files for an input assignment."""
+    assignment = sys.argv[1] if len(sys.argv) > 1 else None
     
     assignments_path = "assignments"
     solutions_path = "solutions"
     
-    if not lesson_name:
-        lesson_name = os.path.basename(get(assignments_path))
+    if not assignment:
+        assignment = os.path.basename(get(assignments_path))
     
-    if not lesson_name:
-        print("Error: No lessons in the folder.")
+    if not assignment:
+        print("Error: Assignment not available.")
         return
     
-    assignment_folder = os.path.join(assignments_path, lesson_name)
-    solution_file = os.path.join(solutions_path, lesson_name, "solution.csv")
-    assignment_file = os.path.join(solutions_path, lesson_name, "assignment.csv")
-    report_file = f"{lesson_name}-Report.csv"
+    assignment_folder = os.path.join(assignments_path, assignment)
+    solution_file = os.path.join(solutions_path, assignment, "solution.csv")
+    assignment_file = os.path.join(solutions_path, assignment, "assignment.csv")
+
+    output_folder = "evaluations"
+    os.makedirs(output_folder, exist_ok=True)
+
+    report_file = os.path.join(output_folder, f"{assignment}-report.csv")
     
     if not os.path.exists(assignment_folder):
         print(f"Error: Folder '{assignment_folder}' not available.")
