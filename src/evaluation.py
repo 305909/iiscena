@@ -60,7 +60,7 @@ def main():
     output_folder = "evaluations"
     os.makedirs(output_folder, exist_ok=True)
 
-    report_file = os.path.join(output_folder, f"{assignment}-report.csv")
+    report_file = os.path.join(output_folder, f"{assignment}-Report.csv")
     
     if not os.path.exists(assignment_folder):
         print(f"Error: Folder '{assignment_folder}' not available.")
