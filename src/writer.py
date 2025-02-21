@@ -1,7 +1,6 @@
 import os
 import sys
 import pandas as pd
-
 from docx import Document
 
 def get_margins(doc):
@@ -14,28 +13,23 @@ def get_margins(doc):
         "right": section.right_margin.cm,
     }
 
-def get_styles(doc):
-    """Gets the format properties of paragraphs."""
-    styles = []
+def get_lines(doc):
+    """Gets the format properties of each line in the document."""
+    lines = []
     for para in doc.paragraphs:
-        styles.append({
-            "text": 
-            para.text,
-            "alignment": 
-            para.alignment,
-            "font_name": 
-            para.runs[0].font.name if para.runs else "",
-            "font_size": 
-            para.runs[0].font.size.pt if para.runs and para.runs[0].font.size else "",
-            "space_before": 
-            para.paragraph_format.space_before.pt if para.paragraph_format.space_before else "",
-            "space_after": 
-            para.paragraph_format.space_after.pt if para.paragraph_format.space_after else "",
-        })
-    return styles
+        for run in para.runs:
+            lines.append({
+                "text": run.text.strip(),
+                "alignment": para.alignment,
+                "font_name": run.font.name if run.font else "",
+                "font_size": run.font.size.pt if run.font and run.font.size else "",
+                "space_before": para.paragraph_format.space_before.pt if para.paragraph_format.space_before else "",
+                "space_after": para.paragraph_format.space_after.pt if para.paragraph_format.space_after else "",
+            })
+    return [line for line in lines if line["text"]]
 
 def evaluate(student_file, solution_doc):
-    """Evaluate the student file and assign a score."""
+    """Evaluate the student file and assign a score based on line-by-line formatting."""
     student_name, student_surname = [
         part.lower().capitalize() for part in 
         os.path.splitext(os.path.basename(student_file))[0].split('-')
@@ -53,27 +47,27 @@ def evaluate(student_file, solution_doc):
         if student_margins[key] == solution_margins[key]:
             score += 1
     
-    # Evaluate the format properties of paragraphs
-    student_styles = get_styles(student_doc)
-    solution_styles = get_styles(solution_doc)
-    for i in range(min(len(student_styles), len(solution_styles))):
-        total_checks += 5  # Five controls per paragraph (alignment, font, size, space before, space after)
-        if student_styles[i]["alignment"] == solution_styles[i]["alignment"]:
+    # Evaluate the format properties line by line
+    student_lines = get_lines(student_doc)
+    solution_lines = get_lines(solution_doc)
+    
+    for i in range(min(len(student_lines), len(solution_lines))):
+        total_checks += 5  # Five controls per line (alignment, font, size, space before, space after)
+        if student_lines[i]["alignment"] == solution_lines[i]["alignment"]:
             score += 1
-        if student_styles[i]["font_name"] == solution_styles[i]["font_name"]:
+        if student_lines[i]["font_name"] == solution_lines[i]["font_name"]:
             score += 1
-        if student_styles[i]["font_size"] == solution_styles[i]["font_size"]:
+        if student_lines[i]["font_size"] == solution_lines[i]["font_size"]:
             score += 1
-        if student_styles[i]["space_before"] == solution_styles[i]["space_before"]:
+        if student_lines[i]["space_before"] == solution_lines[i]["space_before"]:
             score += 1
-        if student_styles[i]["space_after"] == solution_styles[i]["space_after"]:
+        if student_lines[i]["space_after"] == solution_lines[i]["space_after"]:
             score += 1
     
     percentage = (score / total_checks) * 100 if total_checks > 0 else 0
     return student_name, student_surname, round(percentage, 2)
 
 def main():
-
     """Evaluate student files for an input assignment."""
     assignment = sys.argv[1] if len(sys.argv) > 1 else None
     
@@ -114,6 +108,7 @@ def main():
     
     data_report = pd.DataFrame(results)
     data_report.to_csv(report_file, index=False)
+    
     print(f"Evaluation Report: {report_file}")
 
 if __name__ == "__main__":
