@@ -1,10 +1,11 @@
 import os
 import sys
 import pandas as pd
+
 from docx import Document
 
 def get_margins(doc):
-    """Ottiene i margini del documento DOCX (in cm)."""
+    """Gets the margins of the DOCX document (in cm)."""
     section = doc.sections[0]
     return {
         "top": section.top_margin.cm,
@@ -13,29 +14,38 @@ def get_margins(doc):
         "right": section.right_margin.cm,
     }
 
-def get_paragraph_styles(doc):
-    """Ottiene le proprietà di formattazione dei paragrafi."""
+def get_styles(doc):
+    """Gets the format properties of paragraphs."""
     styles = []
     for para in doc.paragraphs:
         styles.append({
-            "text": para.text,
-            "alignment": para.alignment,
-            "font_name": para.runs[0].font.name if para.runs else "",
-            "font_size": para.runs[0].font.size.pt if para.runs and para.runs[0].font.size else "",
-            "space_before": para.paragraph_format.space_before.pt if para.paragraph_format.space_before else "",
-            "space_after": para.paragraph_format.space_after.pt if para.paragraph_format.space_after else "",
+            "text": 
+            para.text,
+            "alignment": 
+            para.alignment,
+            "font_name": 
+            para.runs[0].font.name if para.runs else "",
+            "font_size": 
+            para.runs[0].font.size.pt if para.runs and para.runs[0].font.size else "",
+            "space_before": 
+            para.paragraph_format.space_before.pt if para.paragraph_format.space_before else "",
+            "space_after": 
+            para.paragraph_format.space_after.pt if para.paragraph_format.space_after else "",
         })
     return styles
 
-def evaluate_submission(student_file, solution_doc):
-    """Valuta il documento dello studente confrontandolo con il file soluzione."""
-    student_name, student_surname = os.path.splitext(os.path.basename(student_file))[0].split('-')
+def evaluate(student_file, solution_doc):
+    """Evaluate the student file and assign a score."""
+    student_name, student_surname = [
+        part.lower().capitalize() for part in 
+        os.path.splitext(os.path.basename(student_file))[0].split('-')
+    ]
     student_doc = Document(student_file)
     
     score = 0
     total_checks = 0
     
-    # Valuta i margini
+    # Evaluate the margins
     student_margins = get_margins(student_doc)
     solution_margins = get_margins(solution_doc)
     for key in student_margins:
@@ -43,11 +53,11 @@ def evaluate_submission(student_file, solution_doc):
         if student_margins[key] == solution_margins[key]:
             score += 1
     
-    # Valuta la formattazione dei paragrafi
-    student_styles = get_paragraph_styles(student_doc)
-    solution_styles = get_paragraph_styles(solution_doc)
+    # Evaluate the format properties of paragraphs
+    student_styles = get_styles(student_doc)
+    solution_styles = get_styles(solution_doc)
     for i in range(min(len(student_styles), len(solution_styles))):
-        total_checks += 5  # Cinque controlli per paragrafo (allineamento, font, dimensione, spazio prima, spazio dopo)
+        total_checks += 5  # Five controls per paragraph (alignment, font, size, space before, space after)
         if student_styles[i]["alignment"] == solution_styles[i]["alignment"]:
             score += 1
         if student_styles[i]["font_name"] == solution_styles[i]["font_name"]:
@@ -63,44 +73,48 @@ def evaluate_submission(student_file, solution_doc):
     return student_name, student_surname, round(percentage, 2)
 
 def main():
-    """Valuta i file degli studenti per una specifica lezione."""
-    if len(sys.argv) < 2:
-        print("Errore: Specificare il nome della sottocartella delle assegnazioni.")
-        return
+
+    """Evaluate student files for an input assignment."""
+    assignment = sys.argv[1] if len(sys.argv) > 1 else None
     
-    lesson_name = sys.argv[1]
     assignments_path = "assignments"
     solutions_path = "solutions"
-    evaluations_path = "evaluations"
     
-    assignment_folder = os.path.join(assignments_path, lesson_name)
-    solution_file = os.path.join(solutions_path, lesson_name, "solution.docx")
-    report_file = os.path.join(evaluations_path, f"{lesson_name}-report.csv")
+    if not assignment:
+        print("Error: Assignment not available.")
+        return
     
+    assignment_folder = os.path.join(assignments_path, assignment)
+    solution_file = os.path.join(solutions_path, assignment, "solution.docx")
+    
+    output_folder = "evaluations"
+    os.makedirs(output_folder, exist_ok=True)
+
+    report_file = os.path.join(output_folder, f"{assignment}-Report.csv")
+
     if not os.path.exists(assignment_folder):
-        print(f"Errore: Cartella '{assignment_folder}' non trovata.")
+        print(f"Error: Folder '{assignment_folder}' not available.")
         return
     
     if not os.path.exists(solution_file):
-        print(f"Errore: File '{solution_file}' non trovato.")
+        print(f"Error: File '{solution_file}' not available.")
         return
     
-    if not os.path.exists(evaluations_path):
-        os.makedirs(evaluations_path)
-    
     solution_doc = Document(solution_file)
+
     results = []
     
     for file in os.listdir(assignment_folder):
         if file.endswith(".docx"):
             student_file = os.path.join(assignment_folder, file)
-            student_name, student_surname, score = evaluate_submission(student_file, solution_doc)
+            student_name, student_surname, score = evaluate(student_file, solution_doc)
+            
             results.append({"Name": student_name, "Surname": student_surname, "Score (%)": score})
-            print(f"Valutazione {file}: {score}%")
+            print(f"Assessment {file}: {score}%")
     
     data_report = pd.DataFrame(results)
     data_report.to_csv(report_file, index=False)
-    print(f"Report generato: {report_file}")
+    print(f"Evaluation Report: {report_file}")
 
 if __name__ == "__main__":
     main()
