@@ -4,14 +4,14 @@ import pandas as pd
 from docx import Document
 
 def get_margins(doc):
-    """Gets the margins of the DOCX document (in cm)."""
-    section = doc.sections[0]
-    return {
-        "top": section.top_margin.cm,
-        "bottom": section.bottom_margin.cm,
-        "left": section.left_margin.cm,
-        "right": section.right_margin.cm,
-    }
+    """Gets the margins of the DOCX document (in cm). Handles multiple sections."""
+    margins = {}
+    for section in doc.sections:
+        margins["top"] = section.top_margin.cm
+        margins["bottom"] = section.bottom_margin.cm
+        margins["left"] = section.left_margin.cm
+        margins["right"] = section.right_margin.cm
+    return margins
 
 def get_lines(doc):
     """Gets the format properties of each line in the document."""
@@ -29,20 +29,37 @@ def get_lines(doc):
     return [line for line in lines if line["text"]]
 
 def compare_text(student_text, solution_text):
-    """Compares two texts (checks for exact matches case).
-       Returns a score by text similarity and case sensitivity."""
-    student_words = student_text.split()
-    solution_words = solution_text.split()
+    """Compares two texts (checks for exact matches with tolerance for case and extra spaces)."""
+    student_text = " ".join(student_text.split())
+    solution_text = " ".join(solution_text.split())
     
-    matching_words = sum(1 for s_word, sol_word in zip(student_words, solution_words) if s_word == sol_word)
-    total_words = len(solution_words)
+    if student_text.lower() == solution_text.lower():
+        return 5  # Perfect match
     
-    # Penalize based on the number of mismatched words
-    word_score = (matching_words / total_words) * 5  # out of 5
-    if matching_words != total_words:
-        word_score -= (total_words - matching_words) * 0.5  # Reduce score for mismatched words
+    # More nuanced text comparison (e.g., considering synonym replacement or fuzzy matching)
+    # For now, using a simple word-based scoring:
+    student_words = set(student_text.split())
+    solution_words = set(solution_text.split())
+    common_words = student_words.intersection(solution_words)
+    return (len(common_words) / len(solution_words)) * 5  # Max score of 5
+
+def compare_format(student_line, solution_line):
+    """Compares line formatting properties."""
+    score = 0
+    total_checks = 5
     
-    return word_score
+    if student_line["alignment"] == solution_line["alignment"]:
+        score += 1
+    if student_line["font_name"] == solution_line["font_name"]:
+        score += 1
+    if student_line["font_size"] == solution_line["font_size"]:
+        score += 1
+    if student_line["space_before"] == solution_line["space_before"]:
+        score += 1
+    if student_line["space_after"] == solution_line["space_after"]:
+        score += 1
+    
+    return score, total_checks
 
 def evaluate(student_file, solution_doc):
     """Evaluate the student file and assign a score based on line-by-line formatting and content."""
@@ -58,34 +75,35 @@ def evaluate(student_file, solution_doc):
     # Evaluate the margins
     student_margins = get_margins(student_doc)
     solution_margins = get_margins(solution_doc)
+    margin_score = 0
     for key in student_margins:
         total_checks += 1
         if student_margins[key] == solution_margins[key]:
-            score += 1
-    
+            margin_score += 1
+    score += margin_score
+    print(f"Margins for {student_name} {student_surname}: {margin_score}/4")
+
     # Evaluate the format properties line by line
     student_lines = get_lines(student_doc)
     solution_lines = get_lines(solution_doc)
     
+    line_score = 0
     for i in range(min(len(student_lines), len(solution_lines))):
-        total_checks += 5  # Five controls per line (alignment, font, size, space before, space after)
-        if student_lines[i]["alignment"] == solution_lines[i]["alignment"]:
-            score += 1
-        if student_lines[i]["font_name"] == solution_lines[i]["font_name"]:
-            score += 1
-        if student_lines[i]["font_size"] == solution_lines[i]["font_size"]:
-            score += 1
-        if student_lines[i]["space_before"] == solution_lines[i]["space_before"]:
-            score += 1
-        if student_lines[i]["space_after"] == solution_lines[i]["space_after"]:
-            score += 1
+        line_format_score, line_format_checks = compare_format(student_lines[i], solution_lines[i])
+        line_score += line_format_score
+        total_checks += line_format_checks
 
         # Evaluate text content
         text_score = compare_text(student_lines[i]["text"], solution_lines[i]["text"])
-        score += text_score
+        line_score += text_score
         total_checks += 1  # Add a point for the text comparison
+
+        print(f"Line {i+1}: Format score = {line_format_score}/{line_format_checks}, Text score = {text_score}/5")
     
+    score += line_score
     percentage = (score / total_checks) * 100 if total_checks > 0 else 0
+    print(f"Final score for {student_name} {student_surname}: {round(percentage, 2)}%")
+    
     return student_name, student_surname, round(percentage, 2)
 
 def main():
@@ -124,7 +142,7 @@ def main():
             student_file = os.path.join(assignment_folder, file)
             student_name, student_surname, score = evaluate(student_file, solution_doc)
             results.append({"Name": student_name, "Surname": student_surname, "Score (%)": score})
-            print(f"Assessment {file}: {score}%")
+            print(f"Assessment {file}: {score}%\n")
     
     data_report = pd.DataFrame(results)
     data_report.to_csv(report_file, index=False)
