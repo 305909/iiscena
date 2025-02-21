@@ -28,8 +28,24 @@ def get_lines(doc):
             })
     return [line for line in lines if line["text"]]
 
+def compare_text(student_text, solution_text):
+    """Compares two texts (checks for exact matches case).
+       Returns a score by text similarity and case sensitivity."""
+    student_words = student_text.split()
+    solution_words = solution_text.split()
+    
+    matching_words = sum(1 for s_word, sol_word in zip(student_words, solution_words) if s_word == sol_word)
+    total_words = len(solution_words)
+    
+    # Penalize based on the number of mismatched words
+    word_score = (matching_words / total_words) * 5  # out of 5
+    if matching_words != total_words:
+        word_score -= (total_words - matching_words) * 0.5  # Reduce score for mismatched words
+    
+    return word_score
+
 def evaluate(student_file, solution_doc):
-    """Evaluate the student file and assign a score based on line-by-line formatting."""
+    """Evaluate the student file and assign a score based on line-by-line formatting and content."""
     student_name, student_surname = [
         part.lower().capitalize() for part in 
         os.path.splitext(os.path.basename(student_file))[0].split('-')
@@ -63,6 +79,11 @@ def evaluate(student_file, solution_doc):
             score += 1
         if student_lines[i]["space_after"] == solution_lines[i]["space_after"]:
             score += 1
+
+        # Evaluate text content
+        text_score = compare_text(student_lines[i]["text"], solution_lines[i]["text"])
+        score += text_score
+        total_checks += 1  # Add a point for the text comparison
     
     percentage = (score / total_checks) * 100 if total_checks > 0 else 0
     return student_name, student_surname, round(percentage, 2)
@@ -102,7 +123,6 @@ def main():
         if file.endswith(".docx"):
             student_file = os.path.join(assignment_folder, file)
             student_name, student_surname, score = evaluate(student_file, solution_doc)
-            
             results.append({"Name": student_name, "Surname": student_surname, "Score (%)": score})
             print(f"Assessment {file}: {score}%")
     
