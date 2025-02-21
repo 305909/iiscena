@@ -1,7 +1,7 @@
 import os
 import sys
 import pandas as pd
-import docx
+from docx import Document
 
 def get_margins(doc):
     """Ottiene i margini del documento DOCX (in cm)."""
@@ -30,7 +30,7 @@ def get_paragraph_styles(doc):
 def evaluate_submission(student_file, solution_doc):
     """Valuta il documento dello studente confrontandolo con il file soluzione."""
     student_name, student_surname = os.path.splitext(os.path.basename(student_file))[0].split('-')
-    student_doc = docx.Document(student_file)
+    student_doc = Document(student_file)
     
     score = 0
     total_checks = 0
@@ -88,7 +88,7 @@ def main():
     if not os.path.exists(evaluations_path):
         os.makedirs(evaluations_path)
     
-    solution_doc = docx.Document(solution_file)
+    solution_doc = Document(solution_file)
     results = []
     
     for file in os.listdir(assignment_folder):
