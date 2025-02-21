@@ -78,10 +78,14 @@ def evaluate(student_file, solution_doc):
     margin_score = 0
     for key in student_margins:
         total_checks += 1
+        print(f"Margin {key.capitalize()} - Solution: {solution_margins[key]} cm, Student: {student_margins[key]} cm", end="")
         if student_margins[key] == solution_margins[key]:
             margin_score += 1
+            print(" | Punteggio: 1/1")
+        else:
+            print(" | Punteggio: 0/1")
     score += margin_score
-    print(f"Margins for {student_name} {student_surname}: {margin_score}/4")
+    print(f"Margins score for {student_name} {student_surname}: {margin_score}/4")
 
     # Evaluate the format properties line by line
     student_lines = get_lines(student_doc)
@@ -98,7 +102,9 @@ def evaluate(student_file, solution_doc):
         line_score += text_score
         total_checks += 1  # Add a point for the text comparison
 
-        print(f"Line {i+1}: Format score = {line_format_score}/{line_format_checks}, Text score = {text_score}/5")
+        print(f"Line {i+1}:")
+        print(f"  Format properties - Solution: {solution_lines[i]}, Student: {student_lines[i]}")
+        print(f"  Format score = {line_format_score}/{line_format_checks}, Text score = {text_score}/5")
     
     score += line_score
     percentage = (score / total_checks) * 100 if total_checks > 0 else 0
