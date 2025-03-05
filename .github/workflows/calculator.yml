@@ -1,0 +1,43 @@
+name: OpenOffice Calculator
+
+on:
+  workflow_dispatch:
+    inputs:
+      assignment:
+        description: 'Assignment'
+        required: true
+      class:
+        description: 'Class'
+        required: true
+        
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install System Requirements
+        run: pip install -r .github/requirements.txt
+      
+      - name: Install LibreOffice
+        run: sudo apt-get update && sudo apt-get install -y libreoffice
+        
+      - name: Run Evaluation Script
+        run: |
+          CLASS=".github/classes/${{ github.event.inputs.class }}"
+          python .github/scripts/open-office-calculator.py "${{ github.event.inputs.assignment }}" "$CLASS"
+
+      - name: Push and Commit
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add evaluations/
+          git commit -m "Add evaluations/${{ github.event.inputs.assignment }}"
+          git push
