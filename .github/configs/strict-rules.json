@@ -1,0 +1,20 @@
+{
+  
+  "weights": {
+    "paragraphs": 0.35,
+    "images": 0.25,
+    "tables": 0.15,
+    "margins": 0.25
+  },
+  
+  "tolerances": {
+    "empty_lines": 0,
+    "paragraph_similarity_threshold": 1.00,
+    "paragraph_bonus": 0,
+    "image_dimension_tolerance": 0,
+    "table_rows_tolerance": 0,
+    "table_columns_tolerance": 0,
+    "margin_tolerance": 0
+  }
+  
+}
