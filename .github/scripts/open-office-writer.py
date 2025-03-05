@@ -255,7 +255,8 @@ class DocumentComparer:
                     differences_list.append("\n".join(diff_entry))
 
             elif element_name.lower() == "margins":
-                tol_margin = self.config.get("tolerances", {}).get("margin_tolerance", 0)
+                tol_margin_cm = self.config.get("tolerances", {}).get("margin_tolerance", 0)
+                tol_margin = tol_margin_cm * 1000
                 sub_keys = list(ref_elem.keys())
                 sub_total = len(sub_keys)
                 sub_matches = 0
@@ -343,7 +344,7 @@ class DocumentComparer:
                     f"  - **Format Similarity:** {formatting_similarity * 100:.1f}%",
                     "  - **Differences:**"
                 ]
-                for attr in ["text", "length", "style", "bold", "italic", "underline", "alignment"]:
+                for attr in ["text", "length", "style", "bold", "italic", "underline", "alignment", "font", "size"]:
                     ref_val = ref_p.get(attr)
                     test_val = test_p.get(attr)
                     if ref_val != test_val:
