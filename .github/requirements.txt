@@ -1,0 +1,4 @@
+lxml
+pandas
+Pillow
+python-docx
