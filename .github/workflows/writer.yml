@@ -12,7 +12,7 @@ on:
       params:
         description: 'Parameters'
         required: false
-        default: 'soft-rules'
+        default: 'strict-rules'
 
 jobs:
   evaluate:
