@@ -219,10 +219,14 @@ class AssignmentEvaluator:
 
     def _get_student_submission(self, student_name: str) -> str:
 
-        surname = student_name.split()[0].upper()
+        student_name_parts = student_name.upper().split()
         for file in os.listdir(self.assignment_folder):
             if file.endswith(".csv") or file.endswith(".ods"):
-                if os.path.splitext(os.path.basename(file))[0].upper() == surname:
+                file_name = os.path.splitext(os.path.basename(file))[0].upper()
+                file_name_parts = file_name.split()
+                num_words = len(file_name_parts)
+                x_student_name = " ".join(student_name_parts[:num_words])
+                if file_name == x_student_name:
                     print(f"Submission for {student_name}: {file}")
                     return file
         return None
