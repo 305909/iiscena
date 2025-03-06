@@ -1,0 +1,284 @@
+# Evaluation Report for MACHMACHI RAYANE
+
+## Paragraphs
+**Score:** 61.6% match
+
+- **Paragraph 6 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Spett.le Hextech S.p.A.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 23
+- **Paragraph 7 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Ufficio Marketing
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 17
+- **Paragraph 8 mismatch:**
+  - **Text Similarity:** 15.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Spett.le Hextech S.p.A.
+      - **Student Submission:** Via dei Pixel, 88
+    - **Length**:
+      - **Reference:** 23
+      - **Student Submission:** 17
+- **Paragraph 9 mismatch:**
+  - **Text Similarity:** 23.5%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Ufficio Marketing
+      - **Student Submission:** 20100 Milano (MI)
+- **Paragraph 10 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Via dei Pixel, 88
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 17
+      - **Student Submission:** 0
+- **Paragraph 11 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 20100 Milano (MI)
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 17
+      - **Student Submission:** 0
+- **Paragraph 13 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Ivrea, 20 febbraio 2025
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 23
+- **Paragraph 15 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Ivrea, 20 febbraio 2025
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 23
+      - **Student Submission:** 0
+- **Paragraph 17 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Oggetto: proposta di collaborazione per iniziativa eSports scolastica
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 69
+- **Paragraph 19 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Oggetto: proposta di collaborazione per iniziativa eSports scolastica
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 69
+      - **Student Submission:** 0
+- **Paragraph 20 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Egregi Signori,
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 15
+- **Paragraph 22 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** l’Istituto di Istruzione Superiore “Giovanni Cena” di Ivrea intende avviare il primo progetto eSports scolastico, con l’obiettivo di coniugare competizione, strategia e formazione.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 180
+- **Paragraph 23 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Egregi Signori,
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 15
+      - **Student Submission:** 0
+- **Paragraph 24 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** A tal fine, organizziamo un torneo interno di eSports, iniziativa che, oltre a valorizzare le competenze digitali degli studenti, rappresenta un’opportunità per avvicinare il mondo dell’istruzione al settore gaming.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 215
+- **Paragraph 25 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** l’Istituto di Istruzione Superiore “Giovanni Cena” di Ivrea intende avviare il primo progetto eSports scolastico, con l’obiettivo di coniugare competizione, strategia e formazione.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 180
+      - **Student Submission:** 0
+- **Paragraph 26 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Ritenendo la vostra azienda un punto di riferimento nel settore, proponiamo una collaborazione, valutando possibili forme di sponsorship o supporto tecnico. In cambio, garantiamo visibilità sui nostri canali istituzionali e un contatto diretto con il pubblico giovanile.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 270
+- **Paragraph 27 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** A tal fine, organizziamo un torneo interno di eSports, iniziativa che, oltre a valorizzare le competenze digitali degli studenti, rappresenta un’opportunità per avvicinare il mondo dell’istruzione al settore gaming.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 215
+      - **Student Submission:** 0
+- **Paragraph 28 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Restiamo a disposizione per concordare un incontro e confidiamo in un vostro riscontro.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 87
+- **Paragraph 29 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Ritenendo la vostra azienda un punto di riferimento nel settore, proponiamo una collaborazione, valutando possibili forme di sponsorship o supporto tecnico. In cambio, garantiamo visibilità sui nostri canali istituzionali e un contatto diretto con il pubblico giovanile.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 270
+      - **Student Submission:** 0
+- **Paragraph 30 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Distinti saluti.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 16
+- **Paragraph 31 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Restiamo a disposizione per concordare un incontro e confidiamo in un vostro riscontro.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 87
+      - **Student Submission:** 0
+- **Paragraph 34 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Enrico Bruno
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 12
+- **Paragraph 35 mismatch:**
+  - **Text Similarity:** 27.8%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Distinti saluti.
+      - **Student Submission:** Dirigente Scolastico
+    - **Length**:
+      - **Reference:** 16
+      - **Student Submission:** 20
+- **Paragraph 36 mismatch:**
+  - **Text Similarity:** 10.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Enrico Bruno
+      - **Student Submission:** I.I.S. Giovanni Cena – Ivrea
+    - **Length**:
+      - **Reference:** 12
+      - **Student Submission:** 28
+- **Paragraph 37 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Dirigente Scolastico
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 20
+      - **Student Submission:** 0
+- **Paragraph 38 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** I.I.S. Giovanni Cena – Ivrea
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 28
+      - **Student Submission:** 0
+- **Paragraph 39 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Prot. n. 001 / MC / 20.02.2025
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 30
+- **3 additional paragraph(s) in reference with no match in the test.**
+## Images
+**Score:** 100.0% match
+
+## Tables
+**Score:** 100.0% match
+
+## Margins
+**Score:** 100.0% match
+
+- 
+Final Score: 75.1%

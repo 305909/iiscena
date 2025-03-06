@@ -1,0 +1,225 @@
+# Evaluation Report for PAONESSA CAMILLA
+
+## Paragraphs
+**Score:** 73.0% match
+
+- **Paragraph 22 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Egregi Signori,
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 15
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 23 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Egregi Signori,
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 15
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 24 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** l’Istituto di Istruzione Superiore “Giovanni Cena” di Ivrea intende avviare il primo progetto eSports scolastico, con l’obiettivo di coniugare competizione, strategia e formazione.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 180
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 25 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** l’Istituto di Istruzione Superiore “Giovanni Cena” di Ivrea intende avviare il primo progetto eSports scolastico, con l’obiettivo di coniugare competizione, strategia e formazione.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 180
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 26 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** A tal fine, organizziamo un torneo interno di eSports, iniziativa che, oltre a valorizzare le competenze digitali degli studenti, rappresenta un’opportunità per avvicinare il mondo dell’istruzione al settore gaming.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 215
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 27 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** A tal fine, organizziamo un torneo interno di eSports, iniziativa che, oltre a valorizzare le competenze digitali degli studenti, rappresenta un’opportunità per avvicinare il mondo dell’istruzione al settore gaming.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 215
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 28 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Ritenendo la vostra azienda un punto di riferimento nel settore, proponiamo una collaborazione, valutando possibili forme di sponsorship o supporto tecnico. In cambio, garantiamo visibilità sui nostri canali istituzionali e un contatto diretto con il pubblico giovanile.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 270
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 29 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Ritenendo la vostra azienda un punto di riferimento nel settore, proponiamo una collaborazione, valutando possibili forme di sponsorship o supporto tecnico. In cambio, garantiamo visibilità sui nostri canali istituzionali e un contatto diretto con il pubblico giovanile.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 270
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 30 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Restiamo a disposizione per concordare un incontro e confidiamo in un vostro riscontro.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 87
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 31 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Restiamo a disposizione per concordare un incontro e confidiamo in un vostro riscontro.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 87
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 34 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Distinti saluti.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 16
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 35 mismatch:**
+  - **Text Similarity:** 14.3%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Distinti saluti.
+      - **Student Submission:** Enrico Bruno
+    - **Length**:
+      - **Reference:** 16
+      - **Student Submission:** 12
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 36 mismatch:**
+  - **Text Similarity:** 25.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Enrico Bruno
+      - **Student Submission:** Dirigente Scolastico
+    - **Length**:
+      - **Reference:** 12
+      - **Student Submission:** 20
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 37 mismatch:**
+  - **Text Similarity:** 25.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Dirigente Scolastico
+      - **Student Submission:** I.I.S. Giovanni Cena – Ivrea
+    - **Length**:
+      - **Reference:** 20
+      - **Student Submission:** 28
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 38 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** I.I.S. Giovanni Cena – Ivrea
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 28
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **Paragraph 41 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Prot. n. 001 / MC / 20.02.2025
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 30
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** unknown
+- **1 additional paragraph(s) in reference with no match in the test.**
+## Images
+**Score:** 100.0% match
+
+## Tables
+**Score:** 100.0% match
+
+## Margins
+**Score:** 100.0% match
+
+- 
+Final Score: 82.5%

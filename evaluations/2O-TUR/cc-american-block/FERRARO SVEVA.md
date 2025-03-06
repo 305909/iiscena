@@ -1,0 +1,228 @@
+# Evaluation Report for FERRARO SVEVA
+
+## Paragraphs
+**Score:** 71.9% match
+
+- **Paragraph 8 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Spett.le Hextech S.p.A.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 23
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** center
+- **Paragraph 9 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 85.7%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Ufficio Marketing
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 17
+      - **Student Submission:** 0
+    - **Alignment**:
+      - **Reference:** left
+      - **Student Submission:** center
+- **Paragraph 10 mismatch:**
+  - **Text Similarity:** 15.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Via dei Pixel, 88
+      - **Student Submission:** Spett.le Hextech S.p.A.
+    - **Length**:
+      - **Reference:** 17
+      - **Student Submission:** 23
+- **Paragraph 11 mismatch:**
+  - **Text Similarity:** 23.5%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 20100 Milano (MI)
+      - **Student Submission:** Ufficio Marketing
+- **Paragraph 12 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Via dei Pixel, 88
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 17
+- **Paragraph 13 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** 20100 Milano (MI)
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 17
+- **Paragraph 15 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Ivrea, 20 febbraio 2025
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 23
+      - **Student Submission:** 0
+- **Paragraph 17 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Ivrea, 20 febbraio 2025
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 23
+- **Paragraph 19 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Oggetto: proposta di collaborazione per iniziativa eSports scolastica
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 69
+      - **Student Submission:** 0
+- **Paragraph 21 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Oggetto: proposta di collaborazione per iniziativa eSports scolastica
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 69
+- **Paragraph 23 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Egregi Signori,
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 15
+      - **Student Submission:** 0
+- **Paragraph 24 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Egregi Signori,
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 15
+- **Paragraph 31 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Restiamo a disposizione per concordare un incontro e confidiamo in un vostro riscontro.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 87
+      - **Student Submission:** 0
+- **Paragraph 33 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Restiamo a disposizione per concordare un incontro e confidiamo in un vostro riscontro.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 87
+- **Paragraph 35 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Distinti saluti.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 16
+      - **Student Submission:** 0
+- **Paragraph 36 mismatch:**
+  - **Text Similarity:** 28.6%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Enrico Bruno
+      - **Student Submission:** Distinti saluti.
+    - **Length**:
+      - **Reference:** 12
+      - **Student Submission:** 16
+- **Paragraph 37 mismatch:**
+  - **Text Similarity:** 25.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Dirigente Scolastico
+      - **Student Submission:** Enrico Bruno
+    - **Length**:
+      - **Reference:** 20
+      - **Student Submission:** 12
+- **Paragraph 38 mismatch:**
+  - **Text Similarity:** 20.8%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** I.I.S. Giovanni Cena – Ivrea
+      - **Student Submission:** Dirigente Scolastico
+    - **Length**:
+      - **Reference:** 28
+      - **Student Submission:** 20
+- **Paragraph 39 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** I.I.S. Giovanni Cena – Ivrea
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 28
+- **Paragraph 40 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Prot. n. 001 / MC / 20.02.2025
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 30
+- **2 additional paragraph(s) in reference with no match in the test.**
+## Images
+**Score:** 100.0% match
+
+## Tables
+**Score:** 100.0% match
+
+## Margins
+**Score:** 71.4% match
+
+- **Margins mismatch:**
+  - **Differences:**
+    - **{http://schemas.openxmlformats.org/wordprocessingml/2006/main}left**:
+      - **Reference:** 1701
+      - **Student Submission:** 1134
+    - **{http://schemas.openxmlformats.org/wordprocessingml/2006/main}top**:
+      - **Reference:** 1701
+      - **Student Submission:** 1134
+- 
+Final Score: 71.7%

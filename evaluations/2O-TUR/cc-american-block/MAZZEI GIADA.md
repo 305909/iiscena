@@ -1,0 +1,135 @@
+# Evaluation Report for MAZZEI GIADA
+
+## Paragraphs
+**Score:** 78.4% match
+
+- **Paragraph 24 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** l’Istituto di Istruzione Superiore “Giovanni Cena” di Ivrea intende avviare il primo progetto eSports scolastico, con l’obiettivo di coniugare competizione, strategia e formazione.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 180
+- **Paragraph 25 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** l’Istituto di Istruzione Superiore “Giovanni Cena” di Ivrea intende avviare il primo progetto eSports scolastico, con l’obiettivo di coniugare competizione, strategia e formazione.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 180
+      - **Student Submission:** 0
+- **Paragraph 26 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** A tal fine, organizziamo un torneo interno di eSports, iniziativa che, oltre a valorizzare le competenze digitali degli studenti, rappresenta un’opportunità per avvicinare il mondo dell’istruzione al settore gaming.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 215
+- **Paragraph 27 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** A tal fine, organizziamo un torneo interno di eSports, iniziativa che, oltre a valorizzare le competenze digitali degli studenti, rappresenta un’opportunità per avvicinare il mondo dell’istruzione al settore gaming.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 215
+      - **Student Submission:** 0
+- **Paragraph 28 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Ritenendo la vostra azienda un punto di riferimento nel settore, proponiamo una collaborazione, valutando possibili forme di sponsorship o supporto tecnico. In cambio, garantiamo visibilità sui nostri canali istituzionali e un contatto diretto con il pubblico giovanile.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 270
+- **Paragraph 29 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Ritenendo la vostra azienda un punto di riferimento nel settore, proponiamo una collaborazione, valutando possibili forme di sponsorship o supporto tecnico. In cambio, garantiamo visibilità sui nostri canali istituzionali e un contatto diretto con il pubblico giovanile.
+      - **Student Submission:** 
+    - **Length**:
+      - **Reference:** 270
+      - **Student Submission:** 0
+- **Paragraph 34 mismatch:**
+  - **Text Similarity:** 0.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** 
+      - **Student Submission:** Distinti saluti.
+    - **Length**:
+      - **Reference:** 0
+      - **Student Submission:** 16
+- **Paragraph 35 mismatch:**
+  - **Text Similarity:** 14.3%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Distinti saluti.
+      - **Student Submission:** Enrico Bruno
+    - **Length**:
+      - **Reference:** 16
+      - **Student Submission:** 12
+- **Paragraph 36 mismatch:**
+  - **Text Similarity:** 25.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Enrico Bruno
+      - **Student Submission:** Dirigente Scolastico
+    - **Length**:
+      - **Reference:** 12
+      - **Student Submission:** 20
+- **Paragraph 37 mismatch:**
+  - **Text Similarity:** 25.0%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** Dirigente Scolastico
+      - **Student Submission:** I.I.S. Giovanni Cena – Ivrea
+    - **Length**:
+      - **Reference:** 20
+      - **Student Submission:** 28
+- **Paragraph 38 mismatch:**
+  - **Text Similarity:** 24.1%
+  - **Format Similarity:** 100.0%
+  - **Differences:**
+    - **Text**:
+      - **Reference:** I.I.S. Giovanni Cena – Ivrea
+      - **Student Submission:** Prot. n. 001 / MC / 20.02.2025
+    - **Length**:
+      - **Reference:** 28
+      - **Student Submission:** 30
+- **4 additional paragraph(s) in reference with no match in the test.**
+## Images
+**Score:** 100.0% match
+
+## Tables
+**Score:** 100.0% match
+
+## Margins
+**Score:** 71.4% match
+
+- **Margins mismatch:**
+  - **Differences:**
+    - **{http://schemas.openxmlformats.org/wordprocessingml/2006/main}left**:
+      - **Reference:** 1701
+      - **Student Submission:** 1134
+    - **{http://schemas.openxmlformats.org/wordprocessingml/2006/main}top**:
+      - **Reference:** 1701
+      - **Student Submission:** 1134
+- 
+Final Score: 76.0%
