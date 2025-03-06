@@ -492,13 +492,16 @@ class DocumentEvaluator:
         evaluation_results = []
 
         for student_id, student_name in self.registry.items():
-            surname = student_name.split()[0].upper()
+            student_name_parts = student_name.upper().split()
 
             matched_file = None
             for file in os.listdir(self.assignment_folder):
                 if file.endswith(".docx") or file.endswith(".odt"):
                     file_name = os.path.splitext(os.path.basename(file))[0].upper()
-                    if file_name == surname:
+                    file_name_parts = file_name.split()
+                    num_words = len(file_name_parts)
+                    x_student_name = " ".join(student_name_parts[:num_words])
+                    if file_name == x_student_name:
                         matched_file = file
                         print(f"Submission for {student_name}: {file}")
                         break
