@@ -16,14 +16,14 @@ Con il markup si impostano la struttura di pagine Web come delle app Mobile. Qui
 
 HTML è l'acronimo di HyperText Markup Language ("Linguaggio di contrassegno per gli Ipertesti") e non è un linguaggio di programmazione. Si tratta invece di un linguaggio di markup (di 'contrassegno' o 'di marcatura'), che permette di indicare come disporre gli elementi all'interno di una pagina.
 
-```python
+```html
 <!doctype html>
 <html>
     <head>
         <title>HMTL.it</title>
 ```
 
-Queste indicazioni vengono date attraverso degli appositi marcatori, detti tag ('etichette'), che hanno la caratteristica di essere inclusi tra parentesi angolari (ad es, <img> è il segnaposto di un'immagine).
+Queste indicazioni vengono date attraverso degli appositi marcatori, detti tag ('etichette'), che hanno la caratteristica di essere inclusi tra parentesi angolari (ad es, `<img>` è il segnaposto di un'immagine).
 
 Con HTML quindi indichiamo, attraverso i tag, quali elementi dovranno apparire su uno schermo e come essi debbano essere disposti. Tutte queste indicazioni sono contenute in un documento HTML, spesso detto "Pagina HTML". Una pagina HTML è rappresentata da un file di testo, ovvero un file che possiamo modificare con programmi come notepad e in genere hanno un nome che finisce con l'estensione .html.
 
