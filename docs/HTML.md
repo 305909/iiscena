@@ -7,8 +7,8 @@ HTML è il principale linguaggio di pubblicazione di pagine Web, oltre che uno s
 
 ## Primi passi
 
-1. [Introduzione all'HTML](#Introduzione-all'HTML)
-2. [Hello HTML! Creare la prima pagina](#Hello-HTML!-Creare-la-prima-pagina)
+1. [Introduzione all'HTML](#introduzione-all'html)
+2. [Hello HTML! Creare la prima pagina](#hello-html!-creare-la-prima-pagina)
 
 ### Introduzione all'HTML
 
