@@ -10,7 +10,7 @@ HTML è il principale linguaggio di pubblicazione di pagine Web, oltre che uno s
 1. [Introduzione all'HTML](#introduzione-all'html)
 2. [Hello HTML! Creare la prima pagina](#hello-html!-creare-la-prima-pagina)
 
-### Introduzione all'HTML
+## Introduzione all'HTML
 
 Con il markup si impostano la struttura di pagine Web come delle app Mobile. Qui una panoramica per entrare nello sfaccettato mondo dell'HTML.
 
@@ -72,4 +72,4 @@ Per accedere rapidamente a una ormai enorme mole di informazioni, sono nati i mo
 
 L'ottimizzazione dei contenuti per favorire il posizionamento della pagina per specifiche ricerche si dice SEO (Search Engine Optimization), nel corso della guida ci troveremo a parlarne ancora.
 
-### Hello HTML! Creare la prima pagina
+## Hello HTML! Creare la prima pagina
